@@ -1,8 +1,8 @@
 function calculateShipping() {
-    const weight = parseFloat(document.getElementById("weight").value);
-    const country = document.getElementById("country").value;
-    const pincode = document.getElementById("pincode").value;
-    const shipmentValue = parseFloat(document.getElementById("shipmentValue").value);
+ const weight = parseFloat(document.getElementById("weight").value);
+ const country = document.getElementById("country").value;
+ const pincode = document.getElementById("pincode").value;
+ const shipmentValue = parseFloat(document.getElementById("shipmentValue").value);
 
     // Define shipping rates based on weight and destination country
     const rates = {
