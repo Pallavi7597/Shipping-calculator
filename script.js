@@ -27,7 +27,7 @@ function calculateShipping() {
             5: 20.0,
             10: 25.0
         }
-        // Add more rates for other countries as needed
+     // Add more rates for other countries as needed
     };
 
     let shippingCost = 0;
