@@ -1,55 +1,35 @@
 <!DOCTYPE html>
-<html>
+<html lang="en">
 <head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Shipping Calculator</title>
-    <style>
-        body {
-          font-family: Arial, sans-serif;
-        }
-        form {
-          margin-bottom: 1em;
-        }
-        label {
-          display: block;
-          margin-top: 0.5em;
-        }
-        #result {
-          margin-top: 1em;
-          font-weight: bold;
-        }
-    </style>
+    <link rel="stylesheet" href="styles.css">
 </head>
 <body>
-    <form id="shipping-form">
-      <label for="weight">Weight:</label><br>
-      <input type="number" id="weight" name="weight"><br>
-      <label for="distance">Distance:</label><br>
-      <input type="number" id="distance" name="distance"><br>
-      <input type="submit" value="Calculate">
-    </form>
-    <div id="result"></div>
-
-    <script>
-        document.getElementById('shipping-form').addEventListener('submit', function(event) {
-          event.preventDefault();
-          var weight = document.getElementById('weight').value;
-          var distance = document.getElementById('distance').value;
-          fetch('https://shivamk-5000.theiadocker-2-labs-prod-theiak8s-4-tor01.proxy.cognitiveclass.ai/calculate_shipping', {
-            method: 'POST',
-            headers: {
-              'Content-Type': 'application/json'
-            },
-            body: JSON.stringify({
-              weight: weight,
-              distance: distance
-            })
-          }).then(function(response) {
-              console.log(response)
-            return response.json();
-          }).then(function(data) {
-            document.getElementById('result').textContent = 'The shipping cost is $' + data.cost;
-          });
-        });
-    </script>
+    <div class="container">
+        <img src="shipping-icon.png" alt="Shipping Icon" class="shipping-icon">
+        <h1 class="heading">Shipping Calculator</h1>
+        <form id="shippingForm">
+            <label for="weight">Package Weight (in kg):</label>
+            <input type="number" id="weight" step="0.1" placeholder="Enter weight" required>
+            <label for="country">Destination Country:</label>
+            <select id="country" required>
+                <option value="" disabled selected>Select Country</option>
+                <option value="USA">USA</option>
+                <option value="Canada">Canada</option>
+                <option value="UK">UK</option>
+                <!-- Add more countries as needed -->
+            </select>
+            <label for="pincode">Pin Code:</label>
+            <input type="text" id="pincode" placeholder="Enter pin code" required>
+            <label for="shipmentValue">Shipment Value ($):</label>
+            <input type="number" id="shipmentValue" step="0.01" placeholder="Enter shipment value" required>
+            <button type="button" onclick="calculateShipping()">Calculate</button>
+            <button type="button" onclick="resetForm()">Reset</button>
+        </form>
+        <p id="result"></p>
+    </div>
+    <script src="script.js"></script>
 </body>
 </html>
