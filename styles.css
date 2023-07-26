@@ -6,7 +6,7 @@ body {
 }
 
 .container {
-    max-width: 400px;
+    max-width: 600px;
     margin: 50px auto;
     padding: 20px;
     background-color: #ffffff;
@@ -16,7 +16,7 @@ body {
 
 .heading {
     text-align: center;
-    color: #ffffff; /* White heading color */
+    color: #0c6686ec; /* White heading color */
     margin-bottom: 20px;
 }
 
@@ -39,15 +39,17 @@ input, select {
     border-radius: 4px;
 }
 
-button {
-    background-color: #1E90FF; /* Change the button color to Dodger Blue */
+button[type="button"] {
+    background-color: #007BBF; /* Adjust the color for the Reset button */
     color: #fff;
     cursor: pointer;
     border: none;
     border-radius: 4px;
-    padding: 10px;
-    font-size: 16px;
+    padding: 8px 15px; /* Reduce the padding (top/bottom: 8px, left/right: 15px) */
+    font-size: 14px; /* Reduce the font size */
+    margin-top: 5px; /* Add some spacing between the Calculate and Reset buttons */
 }
+
 
 button:hover {
     background-color: #007BBF; /* Darker shade on hover */
@@ -57,7 +59,7 @@ p {
     text-align: center;
     font-weight: bold;
     font-size: 18px;
-    color: #ffffff; /* White result text color */
+    color: #444386; /* White result text color */
     margin-top: 15px;
 }
 .shipping-icon {
