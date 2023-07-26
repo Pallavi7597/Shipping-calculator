@@ -19,10 +19,12 @@
                 <option value="USA">USA</option>
                 <option value="Canada">Canada</option>
                 <option value="UK">UK</option>
-            <!-- Add more countries as needed -->
+                <!-- Add more countries as needed -->
             </select>
-            <label for="pincode">Pin Code:</label>
-            <input type="text" id="pincode" placeholder="Enter pin code" required>
+            <label for="pincode">Pickup Area Pin Code:</label>
+            <input type="text" id="pickupPincode" placeholder="Enter pickup area pin code" required>
+            <label for="pincode">Delivery Area Pin Code:</label>
+            <input type="text" id="deliveryPincode" placeholder="Enter delivery area pin code" required>
             <label for="shipmentValue">Shipment Value ($):</label>
             <input type="number" id="shipmentValue" step="0.01" placeholder="Enter shipment value" required>
             <button type="button" onclick="calculateShipping()">Calculate</button>
