@@ -1,0 +1,55 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>Shipping Calculator</title>
+    <style>
+        body {
+          font-family: Arial, sans-serif;
+        }
+        form {
+          margin-bottom: 1em;
+        }
+        label {
+          display: block;
+          margin-top: 0.5em;
+        }
+        #result {
+          margin-top: 1em;
+          font-weight: bold;
+        }
+    </style>
+</head>
+<body>
+    <form id="shipping-form">
+      <label for="weight">Weight:</label><br>
+      <input type="number" id="weight" name="weight"><br>
+      <label for="distance">Distance:</label><br>
+      <input type="number" id="distance" name="distance"><br>
+      <input type="submit" value="Calculate">
+    </form>
+    <div id="result"></div>
+
+    <script>
+        document.getElementById('shipping-form').addEventListener('submit', function(event) {
+          event.preventDefault();
+          var weight = document.getElementById('weight').value;
+          var distance = document.getElementById('distance').value;
+          fetch('https://shivamk-5000.theiadocker-2-labs-prod-theiak8s-4-tor01.proxy.cognitiveclass.ai/calculate_shipping', {
+            method: 'POST',
+            headers: {
+              'Content-Type': 'application/json'
+            },
+            body: JSON.stringify({
+              weight: weight,
+              distance: distance
+            })
+          }).then(function(response) {
+              console.log(response)
+            return response.json();
+          }).then(function(data) {
+            document.getElementById('result').textContent = 'The shipping cost is $' + data.cost;
+          });
+        });
+    </script>
+</body>
+</html>
