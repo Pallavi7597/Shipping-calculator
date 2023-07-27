@@ -67,3 +67,11 @@ p {
     margin: 0 auto 20px; /* Centers the image and adds margin at the bottom */
     max-width: 100px; /* Adjust the size as needed */
 }
+.location-container {
+    display: flex;
+    justify-content: space-between;
+  }
+  
+  .location-input {
+    flex-basis: 48%; /* Adjust this value if needed to control the width of the input fields */
+  }
