@@ -9,7 +9,7 @@ function calculateShipmentCost() {
     // Assuming the shipment cost calculation is based on the distance, you can apply your own formula here.
     // For demonstration purposes, we will use a simple fixed cost per kilometer.
   
-    const costPerKilometer = 0.1; // Replace with your actual cost per kilometer
+    const costPerKilometer = 1; // Replace with your actual cost per kilometer
   
     const shipmentCost = distance * costPerKilometer;
   
@@ -26,4 +26,13 @@ function calculateShipmentCost() {
   
     resultElement.textContent = result;
   }
+  function resetForm() {
+    document.getElementById("weight").value = "";
+    document.getElementById("country").selectedIndex = 0;
+    document.getElementById("pickup").value = "";
+    document.getElementById("delivery").value = "";
+    document.getElementById("distance").value = "";
+    document.getElementById("shipmentValue").value = "";
+    document.getElementById("result").textContent = "";
+}
   
