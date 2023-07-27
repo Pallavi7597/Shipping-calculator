@@ -12,19 +12,17 @@
         <h1 class="heading">Shipping Rates Calculator</h1>
         <form id="shippingForm">
             <label for="weight">Package Weight (in kg):</label>
-            <input type="number" id="weight" step="0.1" placeholder="Enter weight" required>
+            <input type="number" id="weight" step="1.0" placeholder="Enter weight" required>
             <label for="country">Destination Country:</label>
             <select id="country" required>
                 <option value="" disabled selected>Select Country</option>
                 <option value="USA">USA</option>
                 <option value="Canada">Canada</option>
                 <option value="UK">UK</option>
-                <!-- Add more countries as needed -->
+                <option value="India">India</option>
             </select>
-            <label for="pincode">Pickup Area Pin Code:</label>
-            <input type="text" id="pickupPincode" placeholder="Enter pickup area pin code" required>
-            <label for="pincode">Delivery Area Pin Code:</label>
-            <input type="text" id="deliveryPincode" placeholder="Enter delivery area pin code" required>
+            <label for="pincode">Pin Code:</label>
+            <input type="text" id="pincode" placeholder="Enter pin code" required>
             <label for="shipmentValue">Shipment Value ($):</label>
             <input type="number" id="shipmentValue" step="0.01" placeholder="Enter shipment value" required>
             <button type="button" onclick="calculateShipping()">Calculate</button>
