@@ -38,7 +38,13 @@
             <button type="button" onclick="calculateShipmentCost()">Calculate</button>
             <button type="button" onclick="resetForm()">Reset</button>
         </form>
-        <p id="result"></p>
+        <div class="modal-overlay" id="modal">
+            <div class="modal-content">
+              <span class="close" onclick="closeModal()">&times;</span>
+              <div id="result">
+                <!-- The calculated shipment cost will be displayed here -->
+              </div>
+            </div>
     </div>
     <script src="script.js"></script>
 </body>
