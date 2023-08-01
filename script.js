@@ -13,17 +13,17 @@ function calculateShipmentCost() {
   
     const shipmentCost = baseCost + (distance * baseCostPerKm) + (weight * baseCostPerKg) + (shipmentValue * 0.05);
   
-  
+    const modal = document.getElementById('modal');
     const resultElement = document.getElementById('result');
-    const result = `Shipment Cost for ${country}:
-                    Weight: ${weight} kg
-                    Pickup Pincode: ${pickupPincode}
-                    Delivery Pincode: ${deliveryPincode}
-                    Distance: ${distance} km
-                    Shipment Value: $${shipmentValue}
-                    Calculated Shipment Cost: $${shipmentCost.toFixed(2)}`;
+    const result = ` Calculated Shipment Cost: $${shipmentCost.toFixed(2)}`;
   
     resultElement.textContent = result;
+    modal.style.display = 'flex';
+  }
+
+  function closeModal() {
+    const modal = document.getElementById('modal');
+    modal.style.display = 'none';
   }
   function resetForm() {
     document.getElementById("weight").value = "";
