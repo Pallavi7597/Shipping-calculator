@@ -27,7 +27,7 @@ function calculateShipmentCost() {
     const result = `Calculated Shipment Cost: ${currencySymbol}${shipmentCost.toFixed(2)}`;;
   
     resultElement.textContent = result;
-    modal.style.display = 'block';
+    modal.style.display = 'flex';
   }
 
   function closeModal() {
