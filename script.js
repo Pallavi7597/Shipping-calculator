@@ -6,8 +6,6 @@ function calculateShipmentCost() {
     const distance = parseFloat(document.getElementById('distance').value);
     const shipmentValue = parseFloat(document.getElementById('shipmentValue').value);
   
-    // Assuming the shipment cost calculation is based on the distance, you can apply your own formula here.
-    // For demonstration purposes, we will use a simple fixed cost per kilometer.
   
     const baseCostPerKm = 0.1;
     const baseCostPerKg = 1;
@@ -15,7 +13,6 @@ function calculateShipmentCost() {
   
     const shipmentCost = baseCost + (distance * baseCostPerKm) + (weight * baseCostPerKg) + (shipmentValue * 0.05);
   
-    // You can add more complex calculations based on weight, country, shipment value, etc.
   
     const resultElement = document.getElementById('result');
     const result = `Shipment Cost for ${country}:
