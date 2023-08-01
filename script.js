@@ -1,3 +1,10 @@
+const currencySymbols = {
+    'USA': '$',
+    'India': '₹',
+    'Canada': 'CAD',
+    // Add more country codes and currency symbols here
+  };
+
 function calculateShipmentCost() {
     const country = document.getElementById('country').value;
     const weight = parseFloat(document.getElementById('weight').value);
@@ -15,10 +22,12 @@ function calculateShipmentCost() {
   
     const modal = document.getElementById('modal');
     const resultElement = document.getElementById('result');
-    const result = ` Calculated Shipment Cost: $${shipmentCost.toFixed(2)}`;
+      // Get the currency symbol based on the selected country
+    const currencySymbol = currencySymbols[country] || '';
+    const result = `Calculated Shipment Cost: ${currencySymbol}${shipmentCost.toFixed(2)}`;;
   
     resultElement.textContent = result;
-    modal.style.display = 'flex';
+    modal.style.display = 'block';
   }
 
   function closeModal() {
